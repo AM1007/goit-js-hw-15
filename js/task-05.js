@@ -1,5 +1,4 @@
 // Обираємо DOM елементи:
-
 const input = document.querySelector("input");
 const addButton = document.querySelector("[data-create]");
 const delButton = document.querySelector("[data-destroy]");
