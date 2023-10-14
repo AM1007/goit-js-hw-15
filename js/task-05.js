@@ -6,7 +6,7 @@ const divElts = document.querySelector("#boxes");
 
 //Визначаємо обробники подій на кнопки "Create" і "Delete"
 addButton.addEventListener("click", addButtonHandler);
-delButton.addEventListener("click", delButtonHandler);
+delButton.addEventListener("click", destroyBoxes);
 
 //Виклик функціїї createBoxes() з передачею введенного користувачем значення "input.value"
 function addButtonHandler() {
@@ -14,7 +14,7 @@ function addButtonHandler() {
 }
 
 // Функція видалення створених елементів 'div'
-function delButtonHandler() {
+function destroyBoxes() {
   document.querySelectorAll(".box").forEach((e) => e.remove());
   input.value = "";
 }
