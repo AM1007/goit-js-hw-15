@@ -12,17 +12,6 @@ delButton.addEventListener("click", () => {
   destroyBoxes();
 });
 
-// Виклик функції createBoxes() з передачею введеного користувачем значення "input.value"
-// function createBoxesHandler() {
-//   createBoxes(input.value);
-// }
-
-// Функція видалення створених елементів 'div'
-function destroyBoxes() {
-  divElts.innerHTML = "";
-  input.value = "";
-}
-
 // Створюємо колекцію елементів 'div', кількість яких приймається параметром 'number'
 function createBoxes(number) {
   divElts.innerHTML = ""; // Обнуляє попереднє значення в input
@@ -37,6 +26,12 @@ function createBoxes(number) {
     divs.push(div);
   }
   divElts.append(...divs);
+}
+
+// Функція видалення створених елементів 'div'
+function destroyBoxes() {
+  divElts.innerHTML = "";
+  input.value = "";
 }
 
 // Функція створення рандомного кольору
