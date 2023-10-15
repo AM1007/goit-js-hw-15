@@ -4,22 +4,26 @@ const addButton = document.querySelector("[data-create]");
 const delButton = document.querySelector("[data-destroy]");
 const divElts = document.querySelector("#boxes");
 
-//Визначаємо обробники подій на кнопки "Create" і "Delete"
-addButton.addEventListener("click", addButtonHandler);
-delButton.addEventListener("click", destroyBoxes);
-
-//Виклик функціїї createBoxes() з передачею введенного користувачем значення "input.value"
-function addButtonHandler() {
+// Визначаємо обробники подій на кнопки "Create" і "Delete"
+addButton.addEventListener("click", () => {
   createBoxes(input.value);
-}
+});
+delButton.addEventListener("click", () => {
+  destroyBoxes();
+});
+
+// Виклик функції createBoxes() з передачею введеного користувачем значення "input.value"
+// function createBoxesHandler() {
+//   createBoxes(input.value);
+// }
 
 // Функція видалення створених елементів 'div'
 function destroyBoxes() {
-  document.querySelectorAll(".box").forEach((e) => e.remove());
+  divElts.innerHTML = "";
   input.value = "";
 }
 
-// Створюємо коллекцію елементів 'div', кількість яких приймається параметром 'number'
+// Створюємо колекцію елементів 'div', кількість яких приймається параметром 'number'
 function createBoxes(number) {
   divElts.innerHTML = ""; // Обнуляє попереднє значення в input
   const divs = [];
